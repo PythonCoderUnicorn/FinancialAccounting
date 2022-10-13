@@ -8,6 +8,12 @@ format:
 jupyter: python3
 ---
 
+
+# Financial Accounting
+
+This chapter is on Purpose and use of Financial statements
+
+
 a demo of python 
 
 ```{python}
@@ -21,5 +27,4 @@ np.random.randint(100)
 
 
 
-# Financial Accounting
 
