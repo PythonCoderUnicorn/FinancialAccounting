@@ -1,0 +1,26 @@
+
+---
+title: "chapter 1"
+theme: solar
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+a demo of python 
+
+```{python}
+import numpy as np
+import pandas as pd 
+import openpyxl
+
+```
+
+```{python}
+np.random.randint(100)
+```
+
+
+# Financial Accounting
+
