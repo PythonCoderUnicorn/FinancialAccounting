@@ -1,0 +1,84 @@
+---
+title: "Why Python"
+# format: revealjs
+format: 
+    revealjs:
+      theme: blood
+      incremental: true
+      
+editor: visual
+---
+
+
+##  Why Python 
+
+Python programming language is dynamically typed and general purpose use, it can do so many things. The one reason
+to learn Python is that it is easy to type and understand, in comparison to other languages. 
+
+Python can handle very large data, more than Excel can handle, it is also commonly used for high level mathematics and
+computations using the NumPy and Pandas libraries.
+
+- Python is free and open source, meaning if you wanted to know how a function or library is created you can look at the code, unlike 
+anything used in the business world.
+
+
+
+## Excel 
+
+The world of business and accounting use Microsoft Excel and other software to do accounting tasks, but these are closed
+programming systems and are not free to use. 
+
+Accounting fundamentally is basic math operations using spreadsheets (in Python called dataframes), and many tasks are repetitive which 
+is a prime reason to use a programming language to make accounting much faster. 
+
+- quick example: say you wanted to fill rows and some columns with numeric values, that could be generated with code instead of
+manually typing numbers into each cell.
+
+
+
+## Reasons to use Python
+
+:::{.incremental}
+- Excel can't be automated
+- Excel can't do procedural tasks
+- Excel for accounting spreadsheets use pivot tables
+- Python can use and format pivot tables
+- Python has Excel extensions
+- _everything you can do in Excel can be done in Python but faster and repetitively (if desired)_
+
+:::
+
+
+## Python is a useful skill
+
+Programming is a different way of thinking and is unlike the typical Excel workflow. Excel is fine, but 
+with Python knowledge you can increase your productivity and can do so much more accounting tasks.
+
+Python is very useful for `Accounting students` who want to learn programming skills yet not spend hours of hand writing
+data tables for specific math operations for specific accounts.
+
+Python is very helpful for `independent Accountants` who want to do Financial Accounting analysis while not 
+spending costly fees on licenses. 
+
+
+
+## With Python you can 
+
+:::{.incremental}
+
+- webscrape the internet and grab data, such as data tables
+- quickly do accounting functions with a reuseable Python functions
+- read a pdf form and get the data from it, then use that for calculations
+- automate certain tasks and send to Google Sheets or make a Microsoft word document
+- send emails with Python
+- and so much more!
+
+:::
+
+## Python and Accounting
+
+Python has so many resources and is a very hirable skill, having Python in your
+skillset will give you more leverage for jobs. 
+
+Learn Python for Accounting today!
+
