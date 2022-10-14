@@ -119,3 +119,40 @@ Business goal is to sell a good or service for a price greater than the cost of 
 
 
 
+### Financial statements
+
+For external reporting purposes to provide information on assets,liabilities, shareholders equity and cash flow.
+
+
+There are 4 required financial statements:
+
+1. **income statement** - reports revenues and expenses, showing how a company's operations performed during a period of time
+
+2. **statement of changes in equity** - shows changes in each component of shareholders equity (common shares and retained earnings) and total equity during period of time
+
+3. **statement of financial position** - what a company owns (assets), what it owes (liabilities) and resulting difference (shareholder equity) at a specific point in time
+
+4. **statement of cash flows** - where a company obtained cash during a period of time and how that cash was used
+
+
+
+#### Statement of changes in Equity
+
+Account balances at the beginning of the period and ends with the account balances at the end of the period. The ownership interest in a company is known as _shareholder's equity_, which is the total shareholder's equity including:
+
+- share capital : the amounts contributed by the shareholders in exchange for shares of ownership
+- retained earnings
+- other accounts
+
+common shares (end of period) = 
+            common shares (begin of period) 
+            + common shares issued (sold) 
+            - common shares repurchased
+            
+
+**retained earnings** - the cumulative amounts of net income that have been retained in the corporation (not distributed as dividends to shareholders). If retained earnings is negative that is net loesses have exceeded net income (deficit)
+
+
+
+
+
