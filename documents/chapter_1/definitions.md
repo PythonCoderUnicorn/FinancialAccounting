@@ -64,6 +64,58 @@ Corporations can borrow using a short-term bank loan payable (note payable) or l
 
 
 
+### Investing activities
+
+Post fund raising, the money i sused for investing activities, which include purchase or sale of long lived assets that a company needs in order to operate.
+
+**Assets** - resources that a company owns or controls. "property, plant and equipment" phrase is used to sum up all the assets of a company.
+
+**goodwill** - when a company pays more than the value of purchased company's net identifiable assets when acquiring a company
+
+**intangible assets** - assets that do not have any physical substance themselves but represent a privilege or a right granted to a company
+
+
+> purchase is outflow, sale is inflow
+
+
+### Operating activities
+
+A company has raised funds and investments, it now does operating activities.
+
+Sources of income (finance income):
+
+- sales revenue
+- service revenue
+- interest revenue
+- rent revenue
+
+
+**accounts receivable** - the operation of receiving money in the future from customers. This is an asset as they represent an economic resource (cash) and will be eventually collected.
+
+
+- supplies are short term assets used in daily operations
+
+- inventory are items held for future sale to customers. When items are sold, they become an expense
+
+
+The cost of inventory sold is an expense called _cost of goods sold_.
+
+
+- expenses are decreases in economic resources
+- other names for expenses = _cost of sales, selling operating and administrative expenses, and income tax expense_. 
+
+
+**accounts payable** - short term liability from some expenses when a company purchases inventory or supplies on credit from suppliers.
+
+**interest payable** - the outstanding (unpaid) liability amounts owed to various lenders and creditors
+
+- dividends payable, salaries payable, property payable, sales tax payable
+
+
+Business goal is to sell a good or service for a price greater than the cost of producing or purchasing the good or providing the service, plus the cost of operating the business.
+
+**net income** - revenues are greater than the expenses incurred to generate the revenues. (net earnings, profit)
+
 
 
 
