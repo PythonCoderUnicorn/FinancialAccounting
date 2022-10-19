@@ -74,3 +74,15 @@
 * `industry average comparison` based on the average ratios for particular industries
 
 
+
+
+**debt to total assets** = long term debt paying ability of a company. This measures the percentage of assets that are financed by lenders and other creditors (not shareholders) as this debt has interest and must be paid at specific times which is riskier than shareholders money.
+
+
+**basic earnings per share** = measures income earned on each common share
+
+**oustanding shares** = stock that is currently held by investors and general public. Oustanding shares changes when new shares are issued, repurchases of existing shares or employee options are converted into shares
+
+**weighted average number of shares** = the calculation of any changes outstanding shares over a specific reporting period. Calculate average price paid for shares multiplied by number of shares bought at that price, sum those vallues and then divide the total value by the total number of shares. [Investopedia](https://www.investopedia.com/ask/answers/12/weighted-average-shares-basic-weight-shares.asp)
+
+
