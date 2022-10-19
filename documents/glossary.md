@@ -39,11 +39,11 @@
 
 **liabilities** = obligations from past transactions and result in the transfer of economic resource that are to be paid within 1 year.
 
-    - `bank indebtness` (short term loan) - using line of credit to cover cash shortfalls
-    - `accounts payable` - are amounts owed by a company to suppliers for purchases made on credit
-    - `accrued payables` - amounts owed by the company for salaries, interest, sales tax, rent, etc (no invoice), expenses incurred by the company have not yet been paid in cash
-    - `unearned revenue` - cash received from a customer in advance of any revenue being earned (before any goods/services have been provided) {Airline industry: payment before flight}
-    - `notes payable` - amounts owed (banks, suppliers etc) that are supported by a written promise to repay, which are interest bearing.Loans and notes are often interchanged but mean the same.
-    - `current maturities of longterm debt` - portion of notes payable/ loan that is due within 1 year, remainder of the loan is classified as non-current liability
+    * `bank indebtness` (short term loan) - using line of credit to cover cash shortfalls
+    * `accounts payable` - are amounts owed by a company to suppliers for purchases made on credit
+    * `accrued payables` - amounts owed by the company for salaries, interest, sales tax, rent, etc (no invoice), expenses incurred by the company have not yet been paid in cash
+    * `unearned revenue` - cash received from a customer in advance of any revenue being earned (before any goods/services have been provided) {Airline industry: payment before flight}
+    * `notes payable` - amounts owed (banks, suppliers etc) that are supported by a written promise to repay, which are interest bearing.Loans and notes are often interchanged but mean the same.
+    * `current maturities of longterm debt` - portion of notes payable/ loan that is due within 1 year, remainder of the loan is classified as non-current liability
 
 
