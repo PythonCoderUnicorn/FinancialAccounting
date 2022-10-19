@@ -86,3 +86,4 @@
 **weighted average number of shares** = the calculation of any changes outstanding shares over a specific reporting period. Calculate average price paid for shares multiplied by number of shares bought at that price, sum those vallues and then divide the total value by the total number of shares. [Investopedia](https://www.investopedia.com/ask/answers/12/weighted-average-shares-basic-weight-shares.asp)
 
 
+**price earnings ratio** = the ratio of the market price per share by basic earnings per share. The price per share. 
