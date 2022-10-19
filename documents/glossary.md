@@ -21,8 +21,9 @@
 **non-current assets** = assets not expected to be converted to cash, sold or used up by the business within 1 year of operating cycle
 
 - long terms investments 
-      - 1) multi-year debt securities (notes, loans, bonds, mortgages) held to gain interest. 
-      - 2) equity securities (shares) held for year to gain revenue
+
+   1) multi-year debt securities (notes, loans, bonds, mortgages) held to gain interest. 
+   2) equity securities (shares) held for year to gain revenue
   
 - property, plant & equipment (tangible, "capital assets")
 - intangible assets
