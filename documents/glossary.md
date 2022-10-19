@@ -56,3 +56,21 @@
 * `lease obligations` amounts to be paid in future long term rental contracts or property :house_with_garden:
 * `pension and benefit` amounts companies owe past and current employees
 * `deferred income tax liabilities` difference between accountin and tax treatment, represent income tax related to current year. Net income is expected to be paid in following period
+
+
+**share capital / capital stock** = shareholders buy stocks in company by investing cash (ownership certificates issued), total of all classes of shares is share capital
+
+
+**retained earnings** = cumulative profits ♻️ 💵
+
+
+**ratio analysis** = is the relationship between selected items of a financial statement data, comparing liquidity, solvency and profitability
+
+* `liquidity ratio` measures the company short term ability to pay its maturing obligations and meet unexpected needs for for cash
+* `solvency ratio` measures the company ability to survive over a long period by having enough assets to settle liabilities when they are due
+* `profitability ratio` measures the company operating success for a given period of time
+* `intracompany comparison` 2 or more periods of the same company
+* `intercompany comparison` comparisons based on competitors in the same industry
+* `industry average comparison` based on the average ratios for particular industries
+
+
