@@ -49,3 +49,10 @@
 * `current maturities of longterm debt` - portion of notes payable/ loan that is due within 1 year, remainder of the loan is classified as non-current liability
 
 
+**non-current liabilities** = obligations expected to be paid or settled after 1 year
+
+* `mortgages payable` property used as security for loan
+* `bonds payable` corporations borrow large sums of money 💰
+* `lease obligations` amounts to be paid in future long term rental contracts or property :house_with_garden:
+* `pension and benefit` amounts companies owe past and current employees
+* `deferred income tax liabilities` difference between accountin and tax treatment, represent income tax related to current year. Net income is expected to be paid in following period
