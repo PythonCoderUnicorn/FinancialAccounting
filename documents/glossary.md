@@ -20,14 +20,14 @@
 
 **non-current assets** = assets not expected to be converted to cash, sold or used up by the business within 1 year of operating cycle
 
-    long terms investments 
+- long terms investments 
       - 1) multi-year debt securities (notes, loans, bonds, mortgages) held to gain interest. 
       - 2) equity securities (shares) held for year to gain revenue
   
-    property, plant & equipment (tangible, "capital assets")
-    intangible assets
-    goodwill
-    other assets
+- property, plant & equipment (tangible, "capital assets")
+- intangible assets
+- goodwill
+- other assets
 
 
 **depreciation** = the assets of plant and equipment (but not property) that are expect to make revenue, which benefit the future. The costs are allocated (expensed) over their useful life, these assets have to be finite in order to get depreciated. The difference bwteen cost and the accumulated depreciation is **carrying amount**.
@@ -40,11 +40,11 @@
 
 **liabilities** = obligations from past transactions and result in the transfer of economic resource that are to be paid within 1 year.
 
-    * `bank indebtness` (short term loan) - using line of credit to cover cash shortfalls
-    * `accounts payable` - are amounts owed by a company to suppliers for purchases made on credit
-    * `accrued payables` - amounts owed by the company for salaries, interest, sales tax, rent, etc (no invoice), expenses incurred by the company have not yet been paid in cash
-    * `unearned revenue` - cash received from a customer in advance of any revenue being earned (before any goods/services have been provided) {Airline industry: payment before flight}
-    * `notes payable` - amounts owed (banks, suppliers etc) that are supported by a written promise to repay, which are interest bearing.Loans and notes are often interchanged but mean the same.
-    * `current maturities of longterm debt` - portion of notes payable/ loan that is due within 1 year, remainder of the loan is classified as non-current liability
+* `bank indebtness` (short term loan) - using line of credit to cover cash shortfalls
+* `accounts payable` - are amounts owed by a company to suppliers for purchases made on credit
+* `accrued payables` - amounts owed by the company for salaries, interest, sales tax, rent, etc (no invoice), expenses incurred by the company have not yet been paid in cash
+* `unearned revenue` - cash received from a customer in advance of any revenue being earned (before any goods/services have been provided) {Airline industry: payment before flight}
+* `notes payable` - amounts owed (banks, suppliers etc) that are supported by a written promise to repay, which are interest bearing.Loans and notes are often interchanged but mean the same.
+* `current maturities of longterm debt` - portion of notes payable/ loan that is due within 1 year, remainder of the loan is classified as non-current liability
 
 
