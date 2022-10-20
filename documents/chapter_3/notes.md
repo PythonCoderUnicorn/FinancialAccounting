@@ -88,3 +88,6 @@ expenses are recognized when incurred for the purpose of generating revenue rega
 **prepayment** = when a company pays a cost in advance. prepayments increase current assets, can affect types of non-current assets (building and equipment). Prepaid insurance would be reocgnized at the timee of payment, insurance expense recorded each month the policy covers
 
 **prepaid expenses** = expenses paid in cash before they are used or consumed. when expenses are prepaid as asset prepaid expense is increased (debited) to show the service or benefit that the company will receive 
+
+
+**straight line method of depreciation** = calculating depreciation expense for a period of time is divide the cost of the asset byt its useful life. Full life quantity is expected to be estimated
