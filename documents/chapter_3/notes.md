@@ -91,3 +91,9 @@ expenses are recognized when incurred for the purpose of generating revenue rega
 
 
 **straight line method of depreciation** = calculating depreciation expense for a period of time is divide the cost of the asset byt its useful life. Full life quantity is expected to be estimated
+
+
+**acrued expenses** = expenses that have been incurred but not yet paid or recorded through transaction journal entries (interest, salaries, property tax, income tax)
+
+**accrued revenues** revenues that have been earned but not yet recorded via journal entries 
+

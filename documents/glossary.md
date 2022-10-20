@@ -87,3 +87,45 @@
 
 
 **price earnings ratio** = the ratio of the market price per share by basic earnings per share. The price per share. 
+
+**normal balance** = the side that is used to increase the account
+
+**asset accounts** = debit (left side) balances , increases in asset accounts ar entered on the debit side. Credit for decrease in assets on right side.
+
+**liabilities accounts** = are on credit right side balances
+
+increases in shareholders equity = common shares and retained earnings , normal balance accounts in credit balance
+
+decreases in shareholders equity  = expenses and dividends declared decrease retained earnings, normal balance accounts is debit balance
+
+
+**chart of accounts** (general ledger) = the framework for accounting information system, lists the accounts and account numbers
+
+
+**posting** = the procedure of transferring journal entries from general ledger to general ledger accounts
+
+
+**matching** the effort of matching expenses to revenues . 
+expenses are recognized when incurred for the purpose of generating revenue regardless of whether cash is paid or not
+
+
+**accrual basis accounting** = transactions affecting a company's financial statements are recorded in the periods in which th events occur, rather than when the company actually receives or pays cash. This is recognizing revenues when they are earned rather than only when cash is received, likewise for expenses, recognized in period used
+
+**cash basis accounting** = revenue is recorded only when cash is received, and expense is recorded only when cash is paid. Can be misleading information due to time differences between events and cash flows.
+
+
+**adjusting entries** = ensure revenues and expenses recognized are properly applied and relevant to the accounting period
+
+**prepayment** = when a company pays a cost in advance. prepayments increase current assets, can affect types of non-current assets (building and equipment). Prepaid insurance would be reocgnized at the timee of payment, insurance expense recorded each month the policy covers
+
+**prepaid expenses** = expenses paid in cash before they are used or consumed. when expenses are prepaid as asset prepaid expense is increased (debited) to show the service or benefit that the company will receive 
+
+
+**straight line method of depreciation** = calculating depreciation expense for a period of time is divide the cost of the asset byt its useful life. Full life quantity is expected to be estimated
+
+
+**acrued expenses** = expenses that have been incurred but not yet paid or recorded through transaction journal entries (interest, salaries, property tax, income tax)
+
+**accrued revenues** revenues that have been earned but not yet recorded via journal entries 
+
+
