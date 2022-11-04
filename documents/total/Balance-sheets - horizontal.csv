@@ -1,0 +1,13 @@
+year,account type,amount
+"""2012""",net sales,4077
+"""2012""",percentage of base year amount,100
+"""2012""",percentage for the year,0
+"""2013""",net sales,5223
+"""2013""",percentage of base year amount,128.1
+"""2013""",percentage for the year,28.1
+"""2014""",net sales,8169
+"""2014""",percentage of base year amount,200.4
+"""2014""",percentage for the year,56.4
+"""2015""",net sales,11162
+"""2015""",percentage of base year amount,273.8
+"""2015""",percentage for the year,36.6

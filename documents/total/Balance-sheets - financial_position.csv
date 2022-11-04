@@ -1,0 +1,37 @@
+year,account type,amount
+"""2018""",current assets cash,55000
+"""2018""",accounts receivable,20000
+"""2018""",inventory,15000
+"""2018""",prepaid expense,5000
+"""2018""",land,140000
+"""2018""",buildings,160000
+"""2018""",accumulated depreciation buildings,11000
+"""2018""",equipment,27000
+"""2018""",accumulated depreciation equipment,3000
+"""2018""",accounts payable,17000
+"""2018""",dividends payable,2000
+"""2018""",income tax payable,6000
+"""2018""",current portion mortgage payable,15000
+"""2018""",non current mortgage payable,124000
+"""2018""",accrued liabilities,0
+"""2018""",common shares,70000
+"""2018""",retained earnings ,164000
+"""2018""",accumulated OCI,10000
+"""2017""",current assets cash,33000
+"""2017""",accounts receivable,30000
+"""2017""",inventory,10000
+"""2017""",prepaid expense,1000
+"""2017""",land,30000
+"""2017""",buildings,40000
+"""2017""",accumulated depreciation buildings,-5000
+"""2017""",equipment,10000
+"""2017""",accumulated depreciation equipment,-1000
+"""2017""",accounts payable,10000
+"""2017""",dividends payable,1000
+"""2017""",income tax payable,8000
+"""2017""",current portion mortgage payable,6000
+"""2017""",non current mortgage payable,15000
+"""2017""",accrued liabilities,0
+"""2017""",common shares,50000
+"""2017""",retained earnings ,48000
+"""2017""",accumulated OCI,10000
