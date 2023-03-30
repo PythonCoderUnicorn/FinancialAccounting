@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>AccountingPy - 2&nbsp; Financial Accounting</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter2.html" rel="next">
+<link href="./pythonbasics.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Financial Accounting</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AccountingPy</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pythonbasics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python Basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Financial Accounting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Job Cost Accounting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Process Cost Accounting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Activity Based Costing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Decision Making: Cost Volume Profit</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Incremental Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Alt Inventory Costing Methods</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Pricing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Budgetary Planning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Budgetary Control &amp; Responsibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter11.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Standard Costs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter12.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Planning for Capital Investments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#cost-concepts" id="toc-cost-concepts" class="nav-link active" data-scroll-target="#cost-concepts"><span class="toc-section-number">2.1</span>  Cost Concepts</a>
+  <ul class="collapse">
+  <li><a href="#manufacturing-costs" id="toc-manufacturing-costs" class="nav-link" data-scroll-target="#manufacturing-costs"><span class="toc-section-number">2.1.1</span>  Manufacturing Costs</a></li>
+  <li><a href="#cost-example" id="toc-cost-example" class="nav-link" data-scroll-target="#cost-example"><span class="toc-section-number">2.1.2</span>  Cost example</a></li>
+  </ul></li>
+  <li><a href="#cost-behavior-analysis" id="toc-cost-behavior-analysis" class="nav-link" data-scroll-target="#cost-behavior-analysis"><span class="toc-section-number">2.2</span>  Cost Behavior Analysis</a>
+  <ul class="collapse">
+  <li><a href="#fixed-costs" id="toc-fixed-costs" class="nav-link" data-scroll-target="#fixed-costs"><span class="toc-section-number">2.2.1</span>  Fixed costs</a></li>
+  <li><a href="#mixed-costs" id="toc-mixed-costs" class="nav-link" data-scroll-target="#mixed-costs"><span class="toc-section-number">2.2.2</span>  Mixed costs</a></li>
+  <li><a href="#classifying-costs" id="toc-classifying-costs" class="nav-link" data-scroll-target="#classifying-costs"><span class="toc-section-number">2.2.3</span>  Classifying costs</a></li>
+  </ul></li>
+  <li><a href="#manufacturing-costs-1" id="toc-manufacturing-costs-1" class="nav-link" data-scroll-target="#manufacturing-costs-1"><span class="toc-section-number">2.3</span>  Manufacturing Costs</a>
+  <ul class="collapse">
+  <li><a href="#cogs-manufactured" id="toc-cogs-manufactured" class="nav-link" data-scroll-target="#cogs-manufactured"><span class="toc-section-number">2.3.1</span>  COGS Manufactured</a></li>
+  <li><a href="#balance-sheet" id="toc-balance-sheet" class="nav-link" data-scroll-target="#balance-sheet"><span class="toc-section-number">2.3.2</span>  Balance sheet</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Financial Accounting</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Welcome to the series of using Python for Financial Accounting. This series will use the information from <em>Financial Accounting - Tools for Business Decision Making, 7th Canadian Edition. Wiley.</em> to form our AccountingPy knowledge.</p>
+<p>This series will be brief in descriptions and explanations, as the focus in this book is joining your existing accounting knowledge with new Python knowledge. There will be a glossary for terms as a reference. This book ideally should be used with accounting classes as this does not go in depth of concepts, just how to use Python for specific calculations.</p>
+<section id="cost-concepts" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="cost-concepts"><span class="header-section-number">2.1</span> Cost Concepts</h2>
+<p>Managerial cost concepts and behavior analysis has 3 main components; managerial cost concepts, cost behavior analysis and manufacturing costs in financial statements.</p>
+<section id="manufacturing-costs" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="manufacturing-costs"><span class="header-section-number">2.1.1</span> Manufacturing Costs</h3>
+<p>To manage costs, a manager needs to have information in order to plan, direct and control operations.</p>
+<ul>
+<li><code>Manufacturing</code> is activities that convert raw materials into finished goods.</li>
+</ul>
+<p>The manufacturing process:</p>
+<ol type="1">
+<li><p>direct materials - raw materials, basic materials parts used in the manufacturing process.</p></li>
+<li><p>indirect material - materials that do not physically become part of the finished product and they can’t be easily traced because physical association with the finished product is too small in terms of cost (accounted under manufacturing overhead).</p></li>
+<li><p>direct labor - the employees that are physically and directly involved in the conversion of raw materials into finished goods.</p></li>
+<li><p>indirect labor - work that is indirect is work that has no physical association with the finished product and is work is too cumbersome to trace back to the cost of goods made.</p></li>
+<li><p>manufacturing overhead - costs that are indirectly associated with the finished product, these specific costs can’t be classified as direct materials or labor.</p></li>
+</ol>
+<ul>
+<li><code>prime cost</code> = sum of all the direct material and labor costs</li>
+<li><code>conversion costs</code> = the sum of all direct labor and manufacturing overhead costs</li>
+<li><code>product costs</code> - the sum of all necessary costs in producing the finished product</li>
+<li><code>period costs</code> - costs that match the revenue of a specific time period instead of the cost of a salable product (non-manufacturing costs), selling and administrative expenses are period costs.</li>
+</ul>
+</section>
+<section id="cost-example" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="cost-example"><span class="header-section-number">2.1.2</span> Cost example</h3>
+<p>This section will go through an example of cost. Say there is a company that makes hoverboards (like the ones in <em>Back to the Future</em> movie series), the following is the manufacturing costs.</p>
+<ul>
+<li>material cost ($30) per board</li>
+<li>labor costs ($40) per board</li>
+<li>depreciation on factory equipment ($25,000 per year)</li>
+<li>property taxes on factory building ($6,000 per year)</li>
+<li>advertising costs ($30,000 per year)</li>
+<li>maintenance salaries ($45,000 per year)</li>
+<li>salary of plant manager ($70,000)</li>
+<li>cost of shipping boards ($18 per board)</li>
+</ul>
+<p>We will use a data dictionary for storing the values from above. Then, let us make a function to calculate all of the costs.</p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>hoverboards <span class="op">=</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'material_cost'</span> : <span class="dv">30</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'labor_cost'</span> : <span class="dv">40</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'depreciation_equipment'</span>: <span class="fl">25e3</span>, <span class="co"># 25,000</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'property_tax_bldg'</span>: <span class="fl">6e3</span>,       <span class="co"># 6,000</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">'advertising_cost'</span>: <span class="fl">30e3</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">'maint_salaries'</span>: <span class="fl">45e3</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">'salary_plant_manager'</span>: <span class="fl">70e3</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">'shipping_cost'</span>: <span class="dv">18</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Make a function to calculate the total manufacturing costs. This function’s argument will use the data type dictionary as input for our calculations. The second thing we want to know is <em>how many hoverboards were made</em>? We can get user input for a number, as this makes the function flexible for future use.</p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> manufacturing_costs(<span class="bu">dict</span> , num_boards: <span class="bu">int</span> ):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  manuf_costs <span class="op">=</span> (<span class="bu">dict</span>[<span class="st">'material_cost'</span>] <span class="op">*</span> num_boards) <span class="op">+</span> (<span class="bu">dict</span>[<span class="st">'labor_cost'</span>] <span class="op">*</span> num_boards) <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                 <span class="bu">dict</span>[<span class="st">'depreciation_equipment'</span>] <span class="op">+</span> <span class="bu">dict</span>[<span class="st">'property_tax_bldg'</span>] <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                 <span class="bu">dict</span>[<span class="st">'maint_salaries'</span>] <span class="op">+</span> <span class="bu">dict</span>[<span class="st">'salary_plant_manager'</span>]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                 </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  cost_per_unit <span class="op">=</span> manuf_costs <span class="op">/</span> num_boards</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                 </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Total manufacturing costs = ${:,}"</span>.<span class="bu">format</span>(manuf_costs))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"</span><span class="ch">\t</span><span class="st">cost per unit is = $</span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(cost_per_unit))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now we call our function and say as that there were 10,000 hoverboards made.</p>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>manufacturing_costs(hoverboards, num_boards<span class="op">=</span> <span class="fl">10e3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Total manufacturing costs = $846,000.0
+    cost per unit is = $84.60</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="cost-behavior-analysis" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="cost-behavior-analysis"><span class="header-section-number">2.2</span> Cost Behavior Analysis</h2>
+<p>The <code>cost behavior analysis</code> is the study of how specific costs respond to changes in the level of business activity. Start from determining the key business activities such as:</p>
+<ul>
+<li>sales in dollars</li>
+<li>kilometers or miles driven</li>
+<li>quantity of service or product sold</li>
+</ul>
+<p>Activity level changes or volume of activity should be correlated with changes in costs. <code>Activity Index</code> is the activity that causes changes in the behavior costs.</p>
+<ul>
+<li><p><code>variable costs</code> = costs that vary in total, directly and proportionally with changes in the activity level. A variable cost is also defined as a cost that remains the same per unit at every level of activity. Variable costs include:</p>
+<ul>
+<li>direct materials</li>
+<li>direct labor for a manufacturer</li>
+<li>costs of goods sold</li>
+<li>sales commissions</li>
+<li>freight shipping</li>
+<li>gasoline for vehicles or planes</li>
+</ul></li>
+</ul>
+<pre><code>if level increases by 10% :
+   total variable costs increases by 10%
+   
+if level of activity decrease by 25%:
+   total variable costs decrease by 25%</code></pre>
+<p>For example, a company’s variable cost is $10 for a camera inside the device. The activity index is the number of devices produced, say 2,000 are made. As each device is made, the total cost of each device increases by $10.</p>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>variable_cost <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>activity_index <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total_variable_cost(var_cost, act_index):</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  total_var_cost <span class="op">=</span> var_cost <span class="op">*</span> act_index</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Total variable costs = ${:,}"</span>.<span class="bu">format</span>(total_var_cost))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>total_variable_cost(variable_cost, activity_index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total variable costs = $20,000</code></pre>
+</div>
+</div>
+<section id="fixed-costs" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="fixed-costs"><span class="header-section-number">2.2.1</span> Fixed costs</h3>
+<p><code>Fixed costs</code> are costs that remain the same in total within the relevant range, regardless of activity level. These include:</p>
+<ul>
+<li>property taxes</li>
+<li>insurance</li>
+<li>rent</li>
+<li>supervisory salaries</li>
+<li>depreciation on buildings</li>
+<li>equipment</li>
+</ul>
+<pre><code>if volume increases:
+  unit cost declines
+  
+if volume decreases:
+  unit cost increases</code></pre>
+<p>A company leases its production facility at a cost of $10,000 per month the total fixed costs of the facility will stay constant at every level of activity. Let us make a function to calculate the unit costs.</p>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>activity_index <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>lease_cost <span class="op">=</span> <span class="fl">10e3</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unit_costs( act_index: <span class="bu">int</span>, lease_cost:<span class="bu">int</span>):</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  unit_cost <span class="op">=</span> lease_cost <span class="op">/</span> act_index </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"unit costs = $</span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(unit_cost))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>unit_costs(activity_index, lease_cost)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>unit costs = $5.00</code></pre>
+</div>
+</div>
+</section>
+<section id="mixed-costs" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="mixed-costs"><span class="header-section-number">2.2.2</span> Mixed costs</h3>
+<p><code>Mixed costs</code> are costs that have both a variable element and a fixed element, semi-variable costs. Mixed costs change in total but not proportionally with changes in the activity level.</p>
+<p>vehicle rental company has mixed cost, assume a 5 m truck rented, plus the insurance is $50 per day, then an additional 25 cents per km.</p>
+<ul>
+<li>fixed cost = $50</li>
+<li>variable cost = 0.25</li>
+</ul>
+<p>Using a for loop you can see what the starting mixed costs are, starting with the $50 rental and 0 kilometers, to 600 kilometers.</p>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>fixed_cost <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>variable_cost <span class="op">=</span> <span class="fl">0.25</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>kms_driven <span class="op">=</span> <span class="bu">range</span>(<span class="dv">600</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> []</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> kms_driven :</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> (x <span class="op">*</span> variable_cost ) <span class="op">+</span> fixed_cost</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  total.append(c)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Start of total costs = $ </span><span class="sc">{</span>total[<span class="dv">1</span>:<span class="dv">5</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"End of total costs = $ </span><span class="sc">{</span>total[<span class="op">-</span><span class="dv">5</span>:<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Start of total costs = $ [50.25, 50.5, 50.75, 51.0]
+End of total costs = $ [198.75, 199.0, 199.25, 199.5]</code></pre>
+</div>
+</div>
+<p>The variable cost rises as the kilometers increase, but the fixed cost stays the same.</p>
+</section>
+<section id="classifying-costs" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="classifying-costs"><span class="header-section-number">2.2.3</span> Classifying costs</h3>
+<p>Mixed costs need to be classified into their respective fixed and variable elements. The standard method is to determine the variable cost and fixed cost of the total cost at the end of a time period. By using past experience to inform the future in cost classifications. One approach is called high-low method, but other approaches are scatter plots and least squares analysis.</p>
+<p>The <code>High-Low method</code> uses costs incurred at the high and low activity levels, the difference in costs between the high and low is the variable costs.</p>
+<ul>
+<li><code>variable cost per unit</code> = <span class="math inline">\(\Delta\)</span> in total costs / <span class="math inline">\(\Delta\)</span> in activity levels</li>
+</ul>
+<p>Using a transportation company, data on its buses as an example :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>month</th>
+<th>kms driven</th>
+<th>total cost $</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jan</td>
+<td>40,000</td>
+<td>30,000</td>
+</tr>
+<tr class="even">
+<td>Feb</td>
+<td>80,000</td>
+<td>48,000</td>
+</tr>
+<tr class="odd">
+<td>Mar</td>
+<td>70,000</td>
+<td>49,000</td>
+</tr>
+<tr class="even">
+<td>April</td>
+<td>100,000</td>
+<td>63,000</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>transport_co <span class="op">=</span> {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'costs_high'</span> : <span class="fl">63e3</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'costs_low'</span> : <span class="fl">30e3</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'high_level'</span>: <span class="fl">100e3</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'low_level'</span> : <span class="fl">40e3</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> var_CostPerUnit( <span class="bu">dict</span> ):</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  delta_costs <span class="op">=</span> <span class="bu">dict</span>[<span class="st">'costs_high'</span>] <span class="op">-</span> <span class="bu">dict</span>[<span class="st">'costs_low'</span>]</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  delta_activity <span class="op">=</span> <span class="bu">dict</span>[<span class="st">'high_level'</span>] <span class="op">-</span> <span class="bu">dict</span>[<span class="st">'low_level'</span>]</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  vcpu <span class="op">=</span> delta_costs <span class="op">/</span> delta_activity</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Total variable cost per unit = $</span><span class="sc">{:.2}</span><span class="st">"</span>.<span class="bu">format</span>(vcpu))</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  tot_fix_cost_h <span class="op">=</span> <span class="bu">dict</span>[<span class="st">'costs_high'</span>] <span class="op">-</span> (<span class="bu">dict</span>[<span class="st">'high_level'</span>] <span class="op">*</span> vcpu)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  tot_fix_cost_l <span class="op">=</span> <span class="bu">dict</span>[<span class="st">'costs_low'</span>] <span class="op">-</span> (<span class="bu">dict</span>[<span class="st">'low_level'</span>] <span class="op">*</span> vcpu)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">----- Maintenance costs ------"</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Total fixed cost (high activity) = $</span><span class="sc">{:.2f}</span><span class="st"> + $</span><span class="sc">{:.2f}</span><span class="st"> per km"</span>.<span class="bu">format</span>(tot_fix_cost_h, vcpu))</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Total fixed cost (low activity) = $</span><span class="sc">{:.2f}</span><span class="st"> +  $</span><span class="sc">{:.2f}</span><span class="st"> per km</span><span class="ch">\n</span><span class="st">"</span>.<span class="bu">format</span>(tot_fix_cost_l, vcpu))</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>var_CostPerUnit( transport_co )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total variable cost per unit = $0.55
+
+----- Maintenance costs ------
+Total fixed cost (high activity) = $8000.00 + $0.55 per km
+Total fixed cost (low activity) = $8000.00 +  $0.55 per km
+</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="manufacturing-costs-1" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="manufacturing-costs-1"><span class="header-section-number">2.3</span> Manufacturing Costs</h2>
+<p>Manufacturing costs in financial statements have 2 sections that differ between all companies, the cost of goods (income statement) and the current assets (balance sheet). The income statement for a merchandiser and a manufacturer will be different in the cost of goods sold (COGS).</p>
+<ul>
+<li>merchandiser: cost of goods sold = beginning merchandise inventory to cost of goods purchased - ending merchandise inventory</li>
+<li>manufacturer: cost of goods = beginning finished goods inventory + cost of goods manufactured - ending finished goods inventory</li>
+</ul>
+<section id="cogs-manufactured" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="cogs-manufactured"><span class="header-section-number">2.3.1</span> COGS Manufactured</h3>
+<p>A company starts production of microchips on Jan 1 (beginning work in process inventory). The costs the company assigns to beginning work in process inventory is based on manufacturing costs incurred in the prior period. The <code>total manufacturing cost</code> is the sum of direct materials costs, direct labor costs, manufacturing overhead incurred in the current year. At the end of the year, part of the total production is complete, the costs of these units become the cost of the ending work in process inventory. Cost of goods manufactured is determined by subtracting incomplete microchip costs from the total cost of work in process.</p>
+<ul>
+<li>total cost of work in process = beginning work in process inventory + total manufacturing cost</li>
+<li>cost of goods manufactured = total cost of work in process - ending work in process inventory</li>
+</ul>
+<p>Partial income statements for a merchandising and a manufacturing company. For the data dictionary we can use the key ‘cost of goods purchased’ to also be ‘cost of goods manufactured’ for manufacturing income statement, and the formula holds.</p>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>merch_co <span class="op">=</span> {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'merchandise_inventory_jan_1'</span> : <span class="fl">90e3</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'cost_of_goods_purchased'</span>: <span class="fl">370e3</span>, <span class="co"># or manufactured</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'merchandise_inventory_dec_31'</span> : <span class="fl">80e3</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cost_of_goods_sold( <span class="bu">dict</span>):</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  cogs_available <span class="op">=</span> <span class="bu">dict</span>[<span class="st">"merchandise_inventory_jan_1"</span>] <span class="op">+</span> <span class="bu">dict</span>[<span class="st">"cost_of_goods_purchased"</span>]</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  cogs <span class="op">=</span> cogs_available <span class="op">-</span> <span class="bu">dict</span>[<span class="st">"merchandise_inventory_dec_31"</span>]</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Cost of goods sold = ${:,}"</span>.<span class="bu">format</span>(cogs))</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>cost_of_goods_sold( merch_co )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cost of goods sold = $380,000.0</code></pre>
+</div>
+</div>
+</section>
+<section id="balance-sheet" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="balance-sheet"><span class="header-section-number">2.3.2</span> Balance sheet</h3>
+<p>The balance sheet for merchandising company is focused on inventory, the balance sheet for a manufacturer may have various inventory accounts.</p>
+<p>Partial Balance sheets for merchandise company and a manufacturer.</p>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>merch_co <span class="op">=</span> {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'cash'</span> : <span class="fl">100e3</span>,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'net_receivables'</span>: <span class="fl">210e3</span>, </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'merchandise_inventory'</span> : <span class="fl">400e3</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Prepaid_expenses'</span>: <span class="fl">22e3</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>manuf_co <span class="op">=</span> {</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">'cash'</span>: <span class="fl">180e3</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">'net_receivables'</span>: <span class="fl">210e3</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">'finished_goods'</span>: <span class="fl">80e3</span>,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">'work_in_progress'</span>: <span class="dv">25200</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">'raw_materials'</span>: <span class="dv">22800</span> ,</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">'prepaid_expenses'</span>: <span class="fl">18e3</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> current_assets( <span class="bu">dict</span>):</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  assets <span class="op">=</span> <span class="bu">list</span>( <span class="bu">dict</span>.values() ) </span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  tot_assets <span class="op">=</span> <span class="bu">sum</span>(assets)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Total current assets = ${:,}"</span>.<span class="bu">format</span>(tot_assets))</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>current_assets( merch_co )</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>current_assets( manuf_co )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total current assets = $732,000.0
+Total current assets = $536,000.0</code></pre>
+</div>
+</div>
+<section id="cogs-example" class="level4" data-number="2.3.2.1">
+<h4 data-number="2.3.2.1" class="anchored" data-anchor-id="cogs-example"><span class="header-section-number">2.3.2.1</span> COGS Example</h4>
+<p>This example will be calculating the cost of goods manufactured with data on raw materials and labor. Cost of goods manufactured schedule for one month. This example is a bicycle manufacturer, and we will use 1,000 has the number for quantity produced.</p>
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>manufacturer <span class="op">=</span> {</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'rent_manuf_equipment'</span> : <span class="fl">2e3</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'bldg_insurance'</span>: <span class="dv">750</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">'raw_materials'</span>: <span class="dv">80</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'manufacturing_utilities'</span>: <span class="dv">1000</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">'labor'</span> : <span class="dv">30</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">'misc_materials'</span>: <span class="fl">1.20</span>,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">'property_tax_bldg_year'</span>: <span class="dv">2400</span>, <span class="co"># per year</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">'supervisor_salary'</span>: <span class="dv">3000</span>,</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">'bldg_depreciation'</span> : <span class="dv">1500</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> manufacturing_cost( <span class="bu">dict</span>, num_produced: <span class="bu">int</span>):</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  base_costs <span class="op">=</span> <span class="bu">dict</span>[<span class="st">'rent_manuf_equipment'</span>] <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>               <span class="bu">dict</span>[<span class="st">'bldg_insurance'</span>] <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>               <span class="bu">dict</span>[<span class="st">'manufacturing_utilities'</span>] <span class="op">+\</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>               (<span class="bu">dict</span>[<span class="st">'property_tax_bldg_year'</span>] <span class="op">/</span> <span class="dv">12</span>) <span class="op">+\</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>               <span class="bu">dict</span>[<span class="st">'supervisor_salary'</span>] <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>               <span class="bu">dict</span>[<span class="st">'bldg_depreciation'</span>]</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print(base_costs)</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  manuf_costs <span class="op">=</span> (<span class="bu">dict</span>[<span class="st">'raw_materials'</span>] <span class="op">*</span> num_produced) <span class="op">+\</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>                (<span class="bu">dict</span>[<span class="st">'labor'</span>] <span class="op">*</span> num_produced) <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>                (<span class="bu">dict</span>[<span class="st">'misc_materials'</span>] <span class="op">*</span> num_produced)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print(manuf_costs)</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>                 </span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  tot_manuf_costs <span class="op">=</span> base_costs <span class="op">+</span> manuf_costs</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  cost_per_unit <span class="op">=</span> manuf_costs <span class="op">/</span> num_produced</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>                 </span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Total manufacturing costs = ${:,}"</span>.<span class="bu">format</span>(tot_manuf_costs))</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"</span><span class="ch">\t</span><span class="st">cost per unit is = $</span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(cost_per_unit))</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>manufacturing_cost( manufacturer, <span class="dv">1000</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Total manufacturing costs = $119,650.0
+    cost per unit is = $111.20</code></pre>
+</div>
+</div>
+<p>This function is very similar to the one at the start of the chapter, calculating the costs for hoverboards.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./pythonbasics.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python Basics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter2.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Job Cost Accounting</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

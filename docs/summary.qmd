@@ -1,0 +1,9 @@
+# Summary
+
+In summary, this book has covered a first year's undergraduate level of accounting topics, 
+and fused with Python programming.
+
+
+
+
+

@@ -1,0 +1,419 @@
+
+# Financial Accounting
+
+Welcome to the series of using Python for Financial Accounting.
+This series will use the information from _Financial Accounting - Tools for Business Decision Making, 7th Canadian Edition. Wiley._ to form our AccountingPy knowledge. 
+
+This series will be brief in descriptions and explanations, as the focus in this book is joining your existing accounting knowledge with new Python knowledge. There will be a glossary for terms as a reference. This book ideally should be used with accounting classes as this does not go in depth of concepts, just how to use Python for specific calculations.
+
+
+
+
+## Cost Concepts
+
+Managerial cost concepts and behavior analysis has 3 main components; managerial cost concepts, cost behavior analysis and manufacturing costs in financial statements.
+
+
+### Manufacturing Costs
+
+To manage costs, a manager needs to have information in order to plan, 
+direct and control operations. 
+
+- `Manufacturing` is activities that convert raw materials into finished goods.
+
+The manufacturing process:
+
+1. direct materials - raw materials, basic materials parts used in the manufacturing process.
+
+
+2. indirect material - materials that do not physically become part of the finished product and they can't be easily traced because physical association with the finished product is too small in terms of cost (accounted under manufacturing overhead).
+
+
+3. direct labor - the employees that are physically and directly involved in the conversion of raw materials into finished goods.
+
+
+4. indirect labor - work that is indirect is work that has no physical association with the finished product and is work is too cumbersome to trace back to the cost of goods made.
+
+
+5. manufacturing overhead - costs that are indirectly associated with the finished product, these specific costs can't be classified as direct materials or labor. 
+
+
+- `prime cost` = sum of all the direct material and labor costs
+- `conversion costs` = the sum of all direct labor and manufacturing overhead costs
+- `product costs` - the sum of all necessary costs in producing the finished product
+- `period costs` - costs that match the revenue of a specific time period instead of the cost of a salable product (non-manufacturing costs), selling and administrative expenses are period costs.
+
+
+
+### Cost example
+
+This section will go through an example of cost. 
+Say there is a company that makes hoverboards (like the ones in _Back to the Future_ movie series), 
+the following is the manufacturing costs.
+
+- material cost ($30) per board
+- labor costs ($40) per board
+- depreciation on factory equipment ($25,000 per year)
+- property taxes on factory building ($6,000 per year)
+- advertising costs ($30,000 per year)
+- maintenance salaries ($45,000 per year)
+- salary of plant manager ($70,000)
+- cost of shipping boards ($18 per board)
+
+We will use a data dictionary for storing the values from above. Then, let us make a function to calculate all of the costs.
+
+```{python}
+hoverboards = {
+  'material_cost' : 30,
+  'labor_cost' : 40,
+  'depreciation_equipment': 25e3, # 25,000
+  'property_tax_bldg': 6e3,       # 6,000
+  'advertising_cost': 30e3,
+  'maint_salaries': 45e3,
+  'salary_plant_manager': 70e3,
+  'shipping_cost': 18
+}
+```
+
+Make a function to calculate the total manufacturing costs. This function's argument will use the data type dictionary as input for our calculations. The second thing we want to know is _how many hoverboards were made_? We can get user input for a number, as this makes the function flexible for future use.
+
+```{python}
+def manufacturing_costs(dict , num_boards: int ):
+  manuf_costs = (dict['material_cost'] * num_boards) + (dict['labor_cost'] * num_boards) + \
+                 dict['depreciation_equipment'] + dict['property_tax_bldg'] + \
+                 dict['maint_salaries'] + dict['salary_plant_manager']
+                 
+  cost_per_unit = manuf_costs / num_boards
+                 
+  print("\nTotal manufacturing costs = ${:,}".format(manuf_costs))
+  print("\tcost per unit is = ${:.2f}".format(cost_per_unit))
+```
+
+Now we call our function and say as that there were 10,000 hoverboards made.
+
+```{python}
+manufacturing_costs(hoverboards, num_boards= 10e3)
+```
+
+
+## Cost Behavior Analysis
+
+The `cost behavior analysis` is the study of how specific costs respond to changes in the level of business activity.
+Start from determining the key business activities such as:
+
+- sales in dollars
+- kilometers or miles driven 
+- quantity of service or product sold
+
+Activity level changes or volume of activity should be correlated with changes in costs. 
+`Activity Index` is the activity that causes changes in the behavior costs.
+
+- `variable costs` = costs that vary in total, directly and proportionally with changes in the activity level. 
+A variable cost is also defined as a cost that remains the same per unit at every level of activity.
+Variable costs include: 
+
+  - direct materials 
+  - direct labor for a manufacturer 
+  - costs of goods sold
+  - sales commissions 
+  - freight shipping 
+  - gasoline for vehicles or planes
+
+
+```{}
+if level increases by 10% :
+   total variable costs increases by 10%
+   
+if level of activity decrease by 25%:
+   total variable costs decrease by 25%
+```
+
+
+For example, a company's variable cost is $10 for a camera inside the device.
+The activity index is the number of devices produced, say 2,000 are made.
+As each device is made, the total cost of each device increases by $10. 
+
+```{python}
+variable_cost = 10
+activity_index = 2000
+
+def total_variable_cost(var_cost, act_index):
+  total_var_cost = var_cost * act_index
+  print("Total variable costs = ${:,}".format(total_var_cost))
+  
+total_variable_cost(variable_cost, activity_index)
+```
+
+
+### Fixed costs
+
+`Fixed costs` are costs that remain the same in total within the relevant range, regardless of activity level. These include:
+
+- property taxes
+- insurance
+- rent
+- supervisory salaries
+- depreciation on buildings
+- equipment
+
+
+```{}
+if volume increases:
+  unit cost declines
+  
+if volume decreases:
+  unit cost increases
+```
+
+A company leases its production facility at a cost of $10,000 per month
+the total fixed costs of the facility will stay constant at every level of activity. 
+Let us make a function to calculate the unit costs.
+
+```{python}
+activity_index = 2000
+lease_cost = 10e3
+
+def unit_costs( act_index: int, lease_cost:int):
+  unit_cost = lease_cost / act_index 
+  print("unit costs = ${:.2f}".format(unit_cost))
+  
+unit_costs(activity_index, lease_cost)
+```
+
+
+### Mixed costs
+
+`Mixed costs` are costs that have both a variable element and a fixed element, semi-variable costs.
+Mixed costs change in total but not proportionally with changes in the activity level.
+
+vehicle rental company has mixed cost, assume a 5 m truck rented, plus the insurance is 
+$50 per day, then an additional 25 cents per km.
+
+- fixed cost = $50
+- variable cost = 0.25
+
+
+Using a for loop you can see what the starting mixed costs are, starting with the $50 rental and 0 kilometers, to 600 kilometers. 
+
+```{python}
+fixed_cost = 50
+variable_cost = 0.25
+kms_driven = range(600)
+total = []
+
+for x in kms_driven :
+  c = (x * variable_cost ) + fixed_cost
+  total.append(c)
+
+print(f"Start of total costs = $ {total[1:5]}")
+print(f"End of total costs = $ {total[-5:-1]}")
+```
+
+The variable cost rises as the kilometers increase, but the fixed cost stays the same.
+
+
+
+
+
+### Classifying costs
+
+Mixed costs need to be classified into their respective fixed and variable elements. 
+The standard method is to determine the variable cost and fixed cost of the total cost 
+at the end of a time period. By using past experience to inform the future in cost classifications.
+One approach is called high-low method, but other approaches are scatter plots and least squares analysis.
+
+
+The `High-Low method` uses costs incurred at the high and low activity levels, 
+the difference in costs between the high and low is the variable costs.
+
+
+- `variable cost per unit` = $\Delta$ in total costs / $\Delta$ in activity levels
+
+
+
+Using a transportation company, data on its buses as an example :
+
+| month     | kms driven    | total cost $  |
+|-----------|---------------|---------------|
+| Jan       | 40,000        | 30,000        |
+| Feb       | 80,000        | 48,000        |
+| Mar       | 70,000        | 49,000        |
+| April     | 100,000       | 63,000        |
+
+
+```{python}
+
+transport_co = {
+  'costs_high' : 63e3,
+  'costs_low' : 30e3,
+  'high_level': 100e3,
+  'low_level' : 40e3
+}
+
+
+def var_CostPerUnit( dict ):
+  
+  delta_costs = dict['costs_high'] - dict['costs_low']
+  delta_activity = dict['high_level'] - dict['low_level']
+  
+  vcpu = delta_costs / delta_activity
+  print("Total variable cost per unit = ${:.2}".format(vcpu))
+  
+  tot_fix_cost_h = dict['costs_high'] - (dict['high_level'] * vcpu)
+  tot_fix_cost_l = dict['costs_low'] - (dict['low_level'] * vcpu)
+  
+  print("\n----- Maintenance costs ------")
+  print("Total fixed cost (high activity) = ${:.2f} + ${:.2f} per km".format(tot_fix_cost_h, vcpu))
+  print("Total fixed cost (low activity) = ${:.2f} +  ${:.2f} per km\n".format(tot_fix_cost_l, vcpu))
+  
+
+var_CostPerUnit( transport_co )
+
+```
+
+
+
+
+## Manufacturing Costs
+
+Manufacturing costs in financial statements have 2 sections that differ between all companies, the cost of goods (income statement) and the current assets (balance sheet). The income statement for a merchandiser and a manufacturer will be different in the cost of goods sold (COGS).
+
+- merchandiser: cost of goods sold = beginning merchandise inventory to cost of goods purchased - ending merchandise inventory
+- manufacturer: cost of goods = beginning finished goods inventory + cost of goods manufactured - ending finished goods inventory
+
+
+
+### COGS Manufactured
+
+A company starts production of microchips on Jan 1 (beginning work in process inventory).
+The costs the company assigns to beginning work in process inventory is based on manufacturing costs incurred in the prior period. The `total manufacturing cost` is the sum of direct materials costs, direct labor costs, manufacturing overhead incurred in the current year. At the end of the year, part of the total production is complete, the costs of these units become the cost of the ending work in process inventory. Cost of goods manufactured is determined by subtracting incomplete microchip costs from the total cost of work in process.
+
+- total cost of work in process = beginning work in process inventory + total manufacturing cost
+- cost of goods manufactured = total cost of work in process - ending work in process inventory
+
+Partial income statements for a merchandising and a manufacturing company. For the data dictionary we can use the key 'cost of goods purchased' to also be 'cost of goods manufactured' for manufacturing income statement, and the formula holds.
+
+```{python}
+merch_co = {
+  'merchandise_inventory_jan_1' : 90e3,
+  'cost_of_goods_purchased': 370e3, # or manufactured
+  'merchandise_inventory_dec_31' : 80e3
+}
+
+def cost_of_goods_sold( dict):
+  cogs_available = dict["merchandise_inventory_jan_1"] + dict["cost_of_goods_purchased"]
+  cogs = cogs_available - dict["merchandise_inventory_dec_31"]
+  
+  print("Cost of goods sold = ${:,}".format(cogs))
+  
+  
+cost_of_goods_sold( merch_co )
+
+```
+
+
+### Balance sheet
+
+The balance sheet for merchandising company is focused on inventory, the balance sheet for a manufacturer may have various inventory accounts.
+
+
+Partial Balance sheets for merchandise company and a manufacturer.
+
+```{python}
+merch_co = {
+  'cash' : 100e3,
+  'net_receivables': 210e3, 
+  'merchandise_inventory' : 400e3,
+  'Prepaid_expenses': 22e3
+}
+
+manuf_co = {
+  'cash': 180e3,
+  'net_receivables': 210e3,
+  'finished_goods': 80e3,
+  'work_in_progress': 25200,
+  'raw_materials': 22800 ,
+  'prepaid_expenses': 18e3
+}
+
+
+
+def current_assets( dict):
+  
+  assets = list( dict.values() ) 
+  tot_assets = sum(assets)
+  print("Total current assets = ${:,}".format(tot_assets))
+  
+  
+current_assets( merch_co )
+current_assets( manuf_co )
+```
+
+#### COGS Example
+
+This example will be calculating the cost of goods manufactured with data on raw materials and labor. Cost of goods manufactured schedule for one month. This example is a bicycle manufacturer, and we will use 1,000 has the number for quantity produced.
+
+
+```{python}
+manufacturer = {
+  'rent_manuf_equipment' : 2e3,
+  'bldg_insurance': 750,
+  'raw_materials': 80,
+  'manufacturing_utilities': 1000,
+  'labor' : 30,
+  'misc_materials': 1.20,
+  'property_tax_bldg_year': 2400, # per year
+  'supervisor_salary': 3000,
+  'bldg_depreciation' : 1500
+}
+```
+
+
+```{python}
+
+def manufacturing_cost( dict, num_produced: int):
+  
+  base_costs = dict['rent_manuf_equipment'] + \
+               dict['bldg_insurance'] + \
+               dict['manufacturing_utilities'] +\
+               (dict['property_tax_bldg_year'] / 12) +\
+               dict['supervisor_salary'] + \
+               dict['bldg_depreciation']
+  # print(base_costs)
+  
+  manuf_costs = (dict['raw_materials'] * num_produced) +\
+                (dict['labor'] * num_produced) + \
+                (dict['misc_materials'] * num_produced)
+  # print(manuf_costs)
+                 
+  tot_manuf_costs = base_costs + manuf_costs
+  
+  cost_per_unit = manuf_costs / num_produced
+                 
+  print("\nTotal manufacturing costs = ${:,}".format(tot_manuf_costs))
+  print("\tcost per unit is = ${:.2f}".format(cost_per_unit))
+  
+
+
+manufacturing_cost( manufacturer, 1000 )
+```
+
+This function is very similar to the one at the start of the chapter, calculating the costs for hoverboards. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
