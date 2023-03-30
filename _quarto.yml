@@ -1,0 +1,50 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "FinancialAccountingPy"
+  author: "Zane Dax (She/They)"
+  date: "12/19/2022"
+  chapters:
+    - index.qmd # preface
+    - intro.qmd
+    - pythonbasics.qmd
+    - chapter1.qmd
+    - chapter2.qmd 
+    - chapter3.qmd
+    - chapter4.qmd
+    - chapter5.qmd
+    - chapter6.qmd
+    - chapter7.qmd
+    - chapter8.qmd
+    - chapter9.qmd
+    - chapter10.qmd
+    - chapter11.qmd
+    - chapter12.qmd
+    # - glossary.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    toc: true
+    theme: 
+      light: pulse  #united  # lumen
+      dark: [slate, custom.scss]
+        # - slate
+        #- custom.scss
+        #- #cyborg
+      
+    code-fold: true
+    code-summary: "Show the code"
+        
+  # pdf:
+  #   documentclass: scrreprt
+  epub: 
+    cover-image: bookcover.png
+
+
+
